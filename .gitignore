@@ -1,0 +1,11 @@
+#Virtual environment
+.venv/
+#Python cache
+--pycache--/
+*.py[code]
+#Jupyter
+.ipynb_checkpoints
+#Secrets
+.env
+#macOS
+.DS_Store
