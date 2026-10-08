@@ -1,120 +1,275 @@
-# Finnish IT Job Market Analysis
+<div align="center">
 
-An exloratory analysis of Finnish IT job posting using Python, Pandas and data visualization
+# 🇫🇮 Finnish IT Job Market Analysis
 
-## 1. Overview
+### An exploratory analysis of Finnish IT job postings using Python, Pandas and data visualization.
 
-- Project purpose
-- What the analysis examines
-- Data size: 21 job postings
-- Data source: LinkedIn
-- Collection period
+**Python** · **Pandas** · **NumPy** · **Matplotlib** · **Jupyter** · **Git**
 
-## 2. Research question:
+</div>
 
-1. What IT job categories are represented in the collected sample?
-2. Which technical skills appear most frequently?
-3. How does skill demand differ across job categories?
-4. What experience levels are requested?
-5. What work models are offered?
+---
 
-## 3. Dataset
+## Overview
 
-### Data fields
+This project explores Finnish IT job postings to understand the characteristics and technical skill requirements found in the collected sample.
 
-Main columns:
+The analysis focuses on:
 
-- Job ID
-- Job title
-- Company
-- Location
-- Posted date
-- Collected date
-- Experience requirement
-- Skills
-- Work model
+- Job category distribution
+- Technical skill demand
+- Skill demand across job categories
+- Experience requirements
+- Work models
 
-### Data preparation
+The dataset contains **21 Finnish IT job postings collected from LinkedIn**.
 
-- Data cleaning
-- Date conversion
-- Experience extraction
-- Skill cleaning and transformation
-- Work model classification
-- Job category classification
+> **Scope:** The results are exploratory and describe the collected sample only. They should not be interpreted as representative of the entire Finnish IT job market.
 
-## 4. Analysis
+---
 
-02_skill_analysis.ipynb
+## Key Findings
 
-- Overall skill frequency
-- Top 10 skills
-- Skill demand by job category
-- Cross-category skills
-- Category-specific skills
+<table>
+<tr>
+<td align="center" width="25%">
 
-03_market_analysis.ipynb
+### 21
 
-- Job posting distribution by category
-- Experience requirement
+Job postings
+
+</td>
+
+<td align="center" width="25%">
+
+### 52%
+
+Software Development
+
+</td>
+
+<td align="center" width="25%">
+
+### 43%
+
+SQL
+
+</td>
+
+<td align="center" width="25%">
+
+### 43%
+
+Python
+
+</td>
+</tr>
+</table>
+
+### What the analysis found
+
+- **Software Development** represented the largest category, with **11 of 21 postings (52.38%)**.
+- **SQL and Python** were the most frequently mentioned skills, each appearing in **9 of 21 postings (42.86%)**.
+- Skill requirements varied across job categories. For example, **Power BI** was prominent in Data Analyst postings, while **Python and SQL** were common in Data Engineering postings.
+- Among the **10 postings with a specified numerical minimum experience requirement**, **3 years** was the most common requirement (50%).
+- **Hybrid** was the dominant recorded work model, accounting for **17 of 21 postings (81%)**.
+
+---
+
+## Skill Analysis
+
+### Top 10 Skills
+
+<p align="center">
+<img src="figures/top_10_skills.png" width="80%">
+</p>
+
+### Skills by Job Category
+
+The analysis also compares the most frequently mentioned skills within each job category.
+
+<table>
+<tr>
+<td align="center" width="50%">
+
+**Software Development**
+
+<img src="figures/top5_skills_SWD.png" width="100%">
+
+</td>
+
+<td align="center" width="50%">
+
+**Data Analysis**
+
+<img src="figures/top5_skills_DTA.png" width="100%">
+
+</td>
+</tr>
+
+<tr>
+<td align="center" width="50%">
+
+**Data Engineering**
+
+<img src="figures/top5_skills_DTE.png" width="100%">
+
+</td>
+
+<td align="center" width="50%">
+
+**AI Engineering**
+
+<img src="figures/top5_skills_AIE.png" width="100%">
+
+</td>
+</tr>
+</table>
+
+### Cross-Category Skills
+
+SQL was the only skill mentioned across all four job categories in the collected sample.
+
+Python, AI tools, CI/CD, AWS and Azure also appeared across multiple categories, showing that several technical skills overlap between different areas of the IT job market.
+
+---
+
+## Market Analysis
+
+The market analysis examines three additional characteristics of the collected postings:
+
+- Job category distribution
+- Minimum experience requirements
 - Work model distribution
 
-## 5. Key Findings
+<p align="center">
+<img src="figures/job_categories.png" width="70%">
+</p>
 
-### Job Categories
+<p align="center">
+<img src="figures/experience_requirements.png" width="70%">
+</p>
 
-Software Development represented the largest share of the collected sample, with 11 of 21 postings.
+<p align="center">
+<img src="figures/work_model.png" width="70%">
+</p>
 
-### Skills
+---
 
-SQL and Python were the most frequently mentioned skills in the collected sample.
+## Analysis Notebooks
 
-### Experience
+The project is organized into three analysis stages.
 
-Among postings with a specified numerical minimum experience requirement, 3 years was the most common requirement.
+| Notebook                    | Focus                                                                                                   |
+| --------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `01_data_exploration.ipynb` | Dataset structure, data quality, dates, experience, work models, job categories and initial exploration |
+| `02_skill_analysis.ipynb`   | Overall skill frequency, top skills, category-level skills and cross-category skills                    |
+| `03_market_analysis.ipynb`  | Job category distribution, experience requirements and work models                                      |
 
-### Work Model
+The notebooks follow a consistent analysis structure:
 
-Hybrid was the dominant work model in the collected sample.
+**Question → Method → Code → Result → Interpretation**
 
-These findings describe the collected sample and should not be interpreted as representative of the entire Finnish IT job market.
+---
 
-## 6. Visualizations
+## Dataset
 
-Charts from the notebooks:
+The dataset contains the following main fields:
 
-- Top 10 Skills
+- `job_id`
+- `job_title`
+- `company`
+- `location`
+- `posted_date`
+- `collected_date`
+- `years_experience_required`
+- `skills`
+- `source_website`
+- `job_url`
+- `work_model`
+- `notes`
 
-- Top Skills by Job Category
+### Data Preparation
 
-- Job Postings by Category
+The dataset was prepared for analysis by:
 
-- Minimum Experience Requirements
+- Cleaning inconsistent values
+- Correcting data-entry errors
+- Converting date fields
+- Extracting minimum and maximum experience requirements
+- Classifying job categories
+- Cleaning and transforming skill data
+- Creating work-model attributes
 
-- Work Model Distribution
+Skill names were largely preserved as they appeared in the original job postings.
 
-## 7. Limitations
+---
 
-- Small sample size: 21 postings
+## Limitations
 
-- Uneven number of postings across categories
+This project is based on a small sample of **21 Finnish IT job postings**. The results should therefore be interpreted as exploratory rather than representative of the entire Finnish IT job market.
 
-- Data collected from a limited source
+The number of postings differs between job categories, with Software Development representing the largest group. This uneven distribution affects comparisons between categories.
 
-- Skill names largely preserved as they appeared in job postings
+Experience analysis is based only on postings with a specified numerical minimum experience requirement.
 
-- Some skill entries contain grouped alternatives
+Some skill entries contain grouped alternatives, such as `Azure/AWS` or `SQL, NoSQL`. These were not automatically split because doing so could change the meaning of the original job requirement.
 
-- Results are exploratory rather than representative
+---
 
-## 10. How to Run
+## Project Structure
 
-Basic instructions for:
+```text
+finnish-it-job-market-analysis/
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── notebooks/
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_skill_analysis.ipynb
+│   └── 03_market_analysis.ipynb
+│
+├── figures/
+│   ├── top_10_skills.png
+│   ├── top5_skills_AIE.png
+│   ├── top5_skills_DTA.png
+│   ├── top5_skills_DTE.png
+│   ├── top5_skills_SWD.png
+│   ├── job_categories.png
+│   ├── experience_requirements.png
+│   └── work_model.png
+│
+├── src/
+│
+├── README.md
+└── requirements.txt
+```
 
-- Clone the repository
+---
 
-- Create a virtual environment
+## Tools & Technologies
 
-- Install dependencies
+| Tool             | Purpose                             |
+| ---------------- | ----------------------------------- |
+| Python           | Data analysis                       |
+| Pandas           | Data cleaning and analysis          |
+| NumPy            | Numerical operations                |
+| Matplotlib       | Data visualization                  |
+| Jupyter Notebook | Analysis and documentation          |
+| Git / GitHub     | Version control and project sharing |
 
-- Open and the notebooks
+---
+
+## Conclusion
+
+The analysis provides an exploratory view of the Finnish IT job postings collected for this project.
+
+Software Development represented the largest share of the sample, while SQL and Python were the most frequently mentioned technical skills.
+
+The skill analysis also showed substantial overlap between job categories, with several technical skills appearing across multiple areas of the IT market.
+
+Overall, the project demonstrates how job posting data can be cleaned, explored and analyzed with Python to identify patterns in technical skill demand and job market characteristics.
+
+> **Note:** Because the dataset contains only 21 postings, these findings should be viewed as observations from the collected sample rather than general conclusions about the Finnish IT job market.
