@@ -217,38 +217,6 @@ Some skill entries contain grouped alternatives, such as `Azure/AWS` or `SQL, No
 
 ---
 
-## Project Structure
-
-```text
-finnish-it-job-market-analysis/
-│
-├── data/
-│   ├── raw/
-│   └── processed/
-│
-├── notebooks/
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_skill_analysis.ipynb
-│   └── 03_market_analysis.ipynb
-│
-├── figures/
-│   ├── top_10_skills.png
-│   ├── top5_skills_AIE.png
-│   ├── top5_skills_DTA.png
-│   ├── top5_skills_DTE.png
-│   ├── top5_skills_SWD.png
-│   ├── job_categories.png
-│   ├── experience_requirements.png
-│   └── work_model.png
-│
-├── src/
-│
-├── README.md
-└── requirements.txt
-```
-
----
-
 ## Tools & Technologies
 
 | Tool             | Purpose                             |
